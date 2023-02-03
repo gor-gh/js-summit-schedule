@@ -1,0 +1,230 @@
+.schedule {
+  padding: 16px;
+  overflow: hidden;
+
+  &-in {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: toRem(70) 1fr;
+    margin: auto;
+
+    &:first-child {
+
+    }
+
+    &:not(:last-child) {
+      margin-bottom: toRem(16);
+    }
+  }
+
+  &-timeline {
+    position: sticky;
+    top: 0;
+    left: 0;
+    padding-top: toRem(40);
+    background-color: var(--timeline-bg);
+    z-index: 2;
+
+    ul {
+      position: relative;
+    }
+
+    li {
+      height: toRem(40);
+      display: flex;
+      align-items: flex-start;
+
+      &:after {
+        content: '';
+        flex: 1 0 0;
+        height: 1px;
+        background-color: var(--grid-border);
+      }
+
+      &:nth-child(odd) {
+        span {
+          padding-right: toRem(6);
+        }
+      }
+
+      &:nth-child(even) {
+        span {
+          padding-right: toRem(12);
+        }
+      }
+
+      &:last-child {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        transform: translateY(-1px);
+      }
+    }
+
+    span {
+      flex: 0 0 auto;
+      font-size: toRem(14);
+      color: var(--schedule-text);
+      transform: translateY(-50%);
+    }
+  }
+
+  &-content {
+    width: 100%;
+    display: flex;
+    background-image: linear-gradient(to bottom, var(--grid-border) 0, transparent 1px), linear-gradient(to right, var(--grid-border) 0, transparent 1px, transparent calc(100% - 1px), var(--grid-border) 100%), linear-gradient(to top, var(--grid-border) 0, transparent 1px);
+    background-position: center top, center center, center bottom;
+    background-size: 100% toRem(40), 100% 100%, 100% toRem(40);
+    background-repeat: repeat-y, no-repeat, no-repeat;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  &-column {
+    min-width: toRem(360);
+    flex: 1 0 0;
+  }
+
+  &-header {
+    height: toRem(40);
+    padding: 2px 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-in {
+      font-size: toRem(16);
+      font-weight: 700;
+      color: var(--schedule-text);
+      text-align: center;
+    }
+  }
+
+  &-body {
+    position: relative;
+    width: 100%;
+  }
+
+  &-item {
+    width: 100%;
+    padding: 4px;
+
+    &-in {
+      width: 100%;
+      height: 100%;
+      padding: 8px;
+      background-color: var(--schedule-item-bg);
+      border-radius: 3px;
+    }
+
+    &-title {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:first-child:last-child {
+        height: 100%;
+      }
+
+      &:not(:first-child:last-child) {
+        height: 50%;
+        border-bottom: 1px solid var(--schedule-item-divider);
+        margin-bottom: toRem(2);
+      }
+
+      &-in {
+        font-size: toRem(14);
+        font-weight: 600;
+        color: var(--schedule-text);
+        text-align: center;
+      }
+    }
+
+    &-info {
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-in {
+        display: flex;
+
+        li {
+          width: toRem(22);
+          height: toRem(22);
+
+          &:not(:last-child) {
+            margin-right: toRem(4);
+          }
+        }
+
+        span {
+          width: 100%;
+          height: 100%;
+          display: block;
+          border-radius: 50%;
+          font-size: toRem(14);
+          line-height: toRem(19);
+          text-align: center;
+
+          &.am {
+            border: 1px solid;
+            border-color: var(--am);
+            color: var(--am);
+          }
+
+          &.en {
+            border: 1px solid;
+            border-color: var(--en);
+            color: var(--en);
+          }
+
+          &.level {
+            border-width: toRem(11);
+            border-style: solid;
+          }
+
+          &.beginner {
+            border-color: var(--beginner);
+          }
+
+          &.intermediate {
+            border-color: var(--intermediate);
+          }
+
+          &.advanced {
+            border-color: var(--advanced);
+          }
+
+          &.all {
+            border-color: var(--all-level);
+          }
+        }
+      }
+    }
+
+    &-speaker {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      &-image {
+        width: toRem(22);
+        height: toRem(22);
+        border-radius: 50%;
+        object-fit: cover;
+      }
+
+      &-name {
+        padding-right: toRem(4);
+        font-size: toRem(12);
+        font-weight: 500;
+        color: var(--schedule-text);
+      }
+    }
+  }
+}

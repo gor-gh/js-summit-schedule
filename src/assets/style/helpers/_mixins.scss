@@ -1,0 +1,5 @@
+@use "sass:math";
+
+@function toRem($number) {
+  @return math.div($number, $fs-primary) + rem;
+}
