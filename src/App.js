@@ -68,7 +68,7 @@ function App() {
                         </div>
                         <div className='schedule-body'>
                             <div className='schedule-item'
-                                 style={{height: (eventDuration * quarterHour) / 16 + 'rem'}}>
+                                 style={{height: (4 * quarterHour) / 16 + 'rem'}}>
                                 <div className='schedule-item-in'>
                                     <div className='schedule-item-title'>
                                         <h6 className='schedule-item-title-in'>Topic 4</h6>
@@ -85,7 +85,7 @@ function App() {
                                         <div className='schedule-item-speaker'>
                                             <span className='schedule-item-speaker-name'>Davit Matevosyan</span>
                                             <img className='schedule-item-speaker-image'
-                                                 src="https://via.placeholder.com/22x22" alt="no photo"/>
+                                                 src="https://via.placeholder.com/22x22" />
                                         </div>
                                     </div>
                                 </div>
@@ -115,7 +115,7 @@ function App() {
                                         <div className='schedule-item-speaker'>
                                             <span className='schedule-item-speaker-name'>Davit Matevosyan</span>
                                             <img className='schedule-item-speaker-image'
-                                                 src="https://via.placeholder.com/22x22" alt="no photo"/>
+                                                 src="https://via.placeholder.com/22x22" />
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ function App() {
                                         <div className='schedule-item-speaker'>
                                             <span className='schedule-item-speaker-name'>Davit Matevosyan</span>
                                             <img className='schedule-item-speaker-image'
-                                                 src="https://via.placeholder.com/22x22" alt="no photo"/>
+                                                 src="https://via.placeholder.com/22x22" />
                                         </div>
                                     </div>
                                 </div>
